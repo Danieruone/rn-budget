@@ -1,17 +1,17 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+
+// components
 import { CurrentBudgetHero } from "../components/CurrentBudgetHero";
+import { MovementList } from "../components/MovementList";
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <CurrentBudgetHero />
+      <MovementList />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 export default HomeScreen;
