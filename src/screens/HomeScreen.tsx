@@ -1,10 +1,15 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+
+// components
+import { CurrentBudgetHero } from "../components/CurrentBudgetHero";
+import { MovementList } from "../components/MovementList";
 
 const HomeScreen = () => {
   return (
     <View>
-      <Text>Home Screen</Text>
+      <CurrentBudgetHero />
+      <MovementList />
     </View>
   );
 };
