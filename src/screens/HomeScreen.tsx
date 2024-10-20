@@ -1,12 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { CurrentBudgetHero } from "../components/CurrentBudgetHero";
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>Home Screen</Text>
+    <View style={styles.container}>
+      <CurrentBudgetHero />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {},
+});
 
 export default HomeScreen;
