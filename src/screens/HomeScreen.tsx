@@ -14,7 +14,7 @@ const HomeScreen = () => {
   return (
     <View>
       <CurrentBudgetHero totalAmount={totalAmount} />
-      <MovementList />
+      <MovementList movementsList={movementsList} />
     </View>
   );
 };

@@ -1,14 +1,23 @@
 import React from "react";
+
+// components
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { MovementItem } from "./MovementItem";
 
-export const MovementList = () => (
+// models
+import { Movement } from "../models/movement";
+
+export const MovementList = ({
+  movementsList,
+}: {
+  movementsList: Movement[];
+}) => (
   <View style={styles.container}>
     <Text style={styles.title}>Movement List</Text>
     <ScrollView>
-      <MovementItem />
-      <MovementItem />
-      <MovementItem />
+      {movementsList.map((movement: Movement) => (
+        <MovementItem key={movement.id} />
+      ))}
     </ScrollView>
   </View>
 );
