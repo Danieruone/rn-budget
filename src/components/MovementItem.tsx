@@ -1,15 +1,16 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
+import { Movement } from "../models/movement";
 
-export const MovementItem = () => {
+export const MovementItem = ({ data }: { data: Movement }) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.titleName}>Movement Name</Text>
-        <Text>Category</Text>
+        <Text style={styles.titleName}>{data.name}</Text>
+        <Text>{data.category}</Text>
       </View>
       <View>
-        <Text style={styles.titleValue}>$2.000</Text>
+        <Text style={styles.titleValue}>${data.amount}</Text>
       </View>
     </View>
   );

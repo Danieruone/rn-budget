@@ -21,7 +21,7 @@ export const MovementList = ({
     ) : (
       <ScrollView>
         {movementsList.map((movement: Movement) => (
-          <MovementItem key={movement.id} />
+          <MovementItem key={movement.id} data={movement} />
         ))}
       </ScrollView>
     )}
