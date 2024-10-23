@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
   },
   subTitle: {
     color: "white",
