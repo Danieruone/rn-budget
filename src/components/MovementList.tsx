@@ -14,11 +14,17 @@ export const MovementList = ({
 }) => (
   <View style={styles.container}>
     <Text style={styles.title}>Movement List</Text>
-    <ScrollView>
-      {movementsList.map((movement: Movement) => (
-        <MovementItem key={movement.id} />
-      ))}
-    </ScrollView>
+    {movementsList.length === 0 ? (
+      <View>
+        <Text style={styles.noMovementsMessage}>No movements yet</Text>
+      </View>
+    ) : (
+      <ScrollView>
+        {movementsList.map((movement: Movement) => (
+          <MovementItem key={movement.id} />
+        ))}
+      </ScrollView>
+    )}
   </View>
 );
 
@@ -30,5 +36,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 20,
+  },
+  noMovementsMessage: {
+    textAlign: "center",
+    marginTop: 20,
   },
 });
