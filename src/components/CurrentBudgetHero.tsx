@@ -2,11 +2,11 @@ import React from "react";
 
 import { StyleSheet, Text, View } from "react-native";
 
-export const CurrentBudgetHero = () => {
+export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Current budget</Text>
-      <Text style={styles.subTitle}>$1.000</Text>
+      <Text style={styles.subTitle}>${totalAmount}</Text>
     </View>
   );
 };
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
   },
   subTitle: {
     color: "white",
