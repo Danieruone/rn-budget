@@ -17,7 +17,9 @@ export const MovementItem = ({ data }: { data: Movement }) => {
         <Text>{data.category}</Text>
       </View>
       <View>
-        <Text style={styles.titleValue}>${data.amount}</Text>
+        <Text style={styles.titleValue}>
+          {data.type === movementType.expense ? "-" : "+"} ${data.amount}
+        </Text>
       </View>
     </View>
   );
