@@ -25,11 +25,12 @@ export const MovementItem = ({ data }: { data: Movement }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    marginBottom: 10,
     flexDirection: "row",
     justifyContent: "space-between",
-    padding: 10,
+    padding: 12,
     alignItems: "center",
+    borderRadius: 12,
   },
   titleName: {
     fontWeight: "bold",
@@ -39,9 +40,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   expenseMovement: {
-    backgroundColor: "red",
+    backgroundColor: "#FFB6B3",
   },
   incomeMovement: {
-    backgroundColor: "green",
+    backgroundColor: "#BCE7BC",
   },
 });
