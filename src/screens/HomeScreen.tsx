@@ -16,6 +16,13 @@ const movementsDummy: Movement[] = [
     category: "Home",
     type: movementType.expense,
   },
+  {
+    id: "2a",
+    name: "Payment",
+    amount: 2000,
+    category: "Salary",
+    type: movementType.income,
+  },
 ];
 
 const HomeScreen = () => {

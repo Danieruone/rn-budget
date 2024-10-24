@@ -1,10 +1,17 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Movement } from "../models/movement";
+import { Movement, movementType } from "../models/movement";
 
 export const MovementItem = ({ data }: { data: Movement }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        data.type === movementType.expense
+          ? styles.expenseMovement
+          : styles.incomeMovement,
+      ]}
+    >
       <View>
         <Text style={styles.titleName}>{data.name}</Text>
         <Text>{data.category}</Text>
@@ -21,6 +28,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flexDirection: "row",
     justifyContent: "space-between",
+    padding: 10,
+    alignItems: "center",
   },
   titleName: {
     fontWeight: "bold",
@@ -28,5 +37,11 @@ const styles = StyleSheet.create({
   },
   titleValue: {
     fontWeight: "bold",
+  },
+  expenseMovement: {
+    backgroundColor: "red",
+  },
+  incomeMovement: {
+    backgroundColor: "green",
   },
 });
