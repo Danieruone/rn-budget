@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
 import { MovementItem } from "./MovementItem";
 
 // models
@@ -13,7 +13,17 @@ export const MovementList = ({
   movementsList: Movement[];
 }) => (
   <View style={styles.container}>
-    <Text style={styles.title}>Movement List</Text>
+    <View style={styles.titleContainer}>
+      <Text style={styles.title}>Movement List</Text>
+      <Pressable
+        style={({ pressed }) => [
+          styles.addButton,
+          { opacity: pressed ? 0.8 : 1.0 },
+        ]}
+      >
+        <Text style={styles.addButtonText}>Add movement</Text>
+      </Pressable>
+    </View>
     {movementsList.length === 0 ? (
       <View>
         <Text style={styles.noMovementsMessage}>No movements yet</Text>
@@ -32,13 +42,27 @@ const styles = StyleSheet.create({
   container: {
     padding: 30,
   },
+  titleContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 20,
   },
   noMovementsMessage: {
     textAlign: "center",
     marginTop: 20,
+  },
+  addButton: {
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: "#90E0EF",
+  },
+  addButtonText: {
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });
