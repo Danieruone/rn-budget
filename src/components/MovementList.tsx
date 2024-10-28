@@ -8,6 +8,7 @@ import { MovementItem } from "./MovementItem";
 import { Movement } from "../models/movement";
 import { CustomButton } from "./shared/CustomButton";
 import { CustomModal } from "./shared/CustomModal";
+import { AddMovementModal } from "./AddMovementModal";
 
 export const MovementList = ({
   movementsList,
@@ -42,7 +43,7 @@ export const MovementList = ({
         visible={modalVisible}
         handleClose={() => setModalVisible(false)}
       >
-        <></>
+        <AddMovementModal />
       </CustomModal>
     </>
   );
