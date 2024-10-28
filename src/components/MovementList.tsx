@@ -6,6 +6,7 @@ import { MovementItem } from "./MovementItem";
 
 // models
 import { Movement } from "../models/movement";
+import { CustomButton } from "./shared/CustomButton";
 
 export const MovementList = ({
   movementsList,
@@ -15,14 +16,7 @@ export const MovementList = ({
   <View style={styles.container}>
     <View style={styles.titleContainer}>
       <Text style={styles.title}>Movement List</Text>
-      <Pressable
-        style={({ pressed }) => [
-          styles.addButton,
-          { opacity: pressed ? 0.8 : 1.0 },
-        ]}
-      >
-        <Text style={styles.addButtonText}>Add movement</Text>
-      </Pressable>
+      <CustomButton title="Add movement" handlePress={() => {}} />
     </View>
     {movementsList.length === 0 ? (
       <View>
@@ -55,14 +49,5 @@ const styles = StyleSheet.create({
   noMovementsMessage: {
     textAlign: "center",
     marginTop: 20,
-  },
-  addButton: {
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: "#90E0EF",
-  },
-  addButtonText: {
-    fontWeight: "bold",
-    fontSize: 15,
   },
 });
