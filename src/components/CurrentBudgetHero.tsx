@@ -5,8 +5,13 @@ import { StyleSheet, Text, View } from "react-native";
 export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Current budget</Text>
-      <Text style={styles.subTitle}>${totalAmount}</Text>
+      <View style={styles.currencySymbolContainer}>
+        <Text style={styles.currencySymbol}>$</Text>
+      </View>
+      <View>
+        <Text style={styles.title}>Total Balance</Text>
+        <Text style={styles.subTitle}>${totalAmount}</Text>
+      </View>
     </View>
   );
 };
@@ -14,16 +19,30 @@ export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 30,
-    backgroundColor: "black",
     alignItems: "center",
+    flexDirection: "row",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+    margin: 20,
+    borderRadius: 10,
+  },
+  currencySymbolContainer: {
+    paddingHorizontal: 25,
+    paddingVertical: 10,
+    backgroundColor: "#F5F3FC",
+    borderRadius: 20,
+    marginRight: 20,
+  },
+  currencySymbol: {
+    fontSize: 40,
+    color: "#A791E8",
+    fontWeight: "light",
   },
   title: {
-    color: "white",
-    fontSize: 25,
+    fontSize: 16,
   },
   subTitle: {
-    color: "white",
-    fontSize: 20,
-    marginTop: 20,
+    fontSize: 35,
+    color: "#A791E8",
+    fontWeight: "bold",
   },
 });
