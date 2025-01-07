@@ -26,7 +26,7 @@ const movementsDummy: Movement[] = [
 ];
 
 const HomeScreen = () => {
-  const [totalAmount, setTotalAmount] = useState<number>(0);
+  const [totalAmount, setTotalAmount] = useState<number>(1000);
   const [movementsList, setNovementsList] =
     useState<Movement[]>(movementsDummy);
   return (
