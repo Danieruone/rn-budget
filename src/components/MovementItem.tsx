@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   expenseMovement: {
-    backgroundColor: "#FFB6B3",
+    backgroundColor: "#FEE6E5",
   },
   incomeMovement: {
-    backgroundColor: "#BCE7BC",
+    backgroundColor: "#E3FBEA",
   },
 });

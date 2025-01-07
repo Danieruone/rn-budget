@@ -21,10 +21,6 @@ export const MovementList = ({
       <View style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Movement List</Text>
-          <CustomButton
-            title="Add movement"
-            handlePress={() => setModalVisible(true)}
-          />
         </View>
         {movementsList.length === 0 ? (
           <View>
@@ -51,7 +47,10 @@ export const MovementList = ({
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30,
+    padding: 20,
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+    margin: 20,
+    borderRadius: 10,
   },
   titleContainer: {
     flexDirection: "row",
@@ -60,8 +59,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 23,
+    color: "#A791E8",
   },
   noMovementsMessage: {
     textAlign: "center",
