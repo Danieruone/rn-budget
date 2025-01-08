@@ -17,7 +17,14 @@ export const MovementItem = ({ data }: { data: Movement }) => {
         <Text>{data.category}</Text>
       </View>
       <View>
-        <Text style={styles.titleValue}>
+        <Text
+          style={[
+            styles.titleValue,
+            data.type === movementType.expense
+              ? styles.titleValueTextExpense
+              : styles.titleValueTextIncome,
+          ]}
+        >
           {data.type === movementType.expense ? "-" : "+"} ${data.amount}
         </Text>
       </View>
@@ -40,6 +47,12 @@ const styles = StyleSheet.create({
   },
   titleValue: {
     fontWeight: "bold",
+  },
+  titleValueTextExpense: {
+    color: "#DC2625",
+  },
+  titleValueTextIncome: {
+    color: "#16A349",
   },
   expenseMovement: {
     backgroundColor: "#FEE6E5",
