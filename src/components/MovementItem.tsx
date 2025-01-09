@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Movement, movementType } from "../models/movement";
+import Icon from "react-native-vector-icons/AntDesign";
 
 export const MovementItem = ({ data }: { data: Movement }) => {
   return (
@@ -14,7 +15,11 @@ export const MovementItem = ({ data }: { data: Movement }) => {
               : styles.incomeMovement,
           ]}
         >
-          <Text>{data.category}</Text>
+          {data.type === movementType.expense ? (
+            <Icon name="arrowdown" size={18} color={"red"} />
+          ) : (
+            <Icon name="arrowup" size={18} color={"green"} />
+          )}
         </View>
         <View>
           <Text style={styles.titleName}>{data.name}</Text>
@@ -72,6 +77,6 @@ const styles = StyleSheet.create({
   iconMovementContainer: {
     marginRight: 10,
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 15,
   },
 });
