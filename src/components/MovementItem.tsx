@@ -1,20 +1,30 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Movement, movementType } from "../models/movement";
+import Icon from "react-native-vector-icons/AntDesign";
 
 export const MovementItem = ({ data }: { data: Movement }) => {
   return (
-    <View
-      style={[
-        styles.container,
-        data.type === movementType.expense
-          ? styles.expenseMovement
-          : styles.incomeMovement,
-      ]}
-    >
-      <View>
-        <Text style={styles.titleName}>{data.name}</Text>
-        <Text>{data.category}</Text>
+    <View style={styles.container}>
+      <View style={styles.infoBlock}>
+        <View
+          style={[
+            styles.iconMovementContainer,
+            data.type === movementType.expense
+              ? styles.expenseMovement
+              : styles.incomeMovement,
+          ]}
+        >
+          {data.type === movementType.expense ? (
+            <Icon name="arrowdown" size={18} color={"red"} />
+          ) : (
+            <Icon name="arrowup" size={18} color={"green"} />
+          )}
+        </View>
+        <View>
+          <Text style={styles.titleName}>{data.name}</Text>
+          <Text>{data.category}</Text>
+        </View>
       </View>
       <View>
         <Text
@@ -46,7 +56,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   titleValue: {
-    fontWeight: "bold",
+    fontWeight: "normal",
+    fontSize: 18,
   },
   titleValueTextExpense: {
     color: "#DC2625",
@@ -59,5 +70,13 @@ const styles = StyleSheet.create({
   },
   incomeMovement: {
     backgroundColor: "#E3FBEA",
+  },
+  infoBlock: {
+    flexDirection: "row",
+  },
+  iconMovementContainer: {
+    marginRight: 10,
+    padding: 10,
+    borderRadius: 15,
   },
 });
