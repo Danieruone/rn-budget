@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-    margin: 20,
+    marginHorizontal: 20,
+    marginTop: 20,
     borderRadius: 10,
   },
   currencySymbolContainer: {
