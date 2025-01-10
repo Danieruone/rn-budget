@@ -6,7 +6,6 @@ import { MovementItem } from "./MovementItem";
 
 // models
 import { Movement } from "../models/movement";
-import { CustomButton } from "./shared/CustomButton";
 import { CustomModal } from "./shared/CustomModal";
 import { AddMovementModal } from "./AddMovementModal";
 
