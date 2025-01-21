@@ -5,5 +5,7 @@ export const CustomDarkTheme = {
   colors: {
     ...DarkTheme.colors,
     primary: "#AE9BE9",
+    background: "#1D2635",
+    card: "#1B2230",
   },
 };
