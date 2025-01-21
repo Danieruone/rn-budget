@@ -1,16 +1,21 @@
 import React from "react";
-
+import { useTheme } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
 
 export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
+  const { colors } = useTheme();
   return (
     <View style={styles.container}>
       <View style={styles.currencySymbolContainer}>
-        <Text style={styles.currencySymbol}>$</Text>
+        <Text style={[styles.currencySymbol, { color: colors.primary }]}>
+          $
+        </Text>
       </View>
       <View>
         <Text style={styles.title}>Total Balance</Text>
-        <Text style={styles.subTitle}>${totalAmount}</Text>
+        <Text style={[styles.subTitle, { color: colors.primary }]}>
+          ${totalAmount}
+        </Text>
       </View>
     </View>
   );
@@ -35,7 +40,6 @@ const styles = StyleSheet.create({
   },
   currencySymbol: {
     fontSize: 40,
-    color: "#A791E8",
     fontWeight: "light",
   },
   title: {
@@ -43,7 +47,6 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 35,
-    color: "#A791E8",
     fontWeight: "bold",
   },
 });

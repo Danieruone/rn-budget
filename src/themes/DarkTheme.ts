@@ -4,7 +4,6 @@ export const CustomDarkTheme = {
   ...DarkTheme,
   colors: {
     ...DarkTheme.colors,
-    background: "#000000",
-    text: "#ffffff",
+    primary: "#AE9BE9",
   },
 };
