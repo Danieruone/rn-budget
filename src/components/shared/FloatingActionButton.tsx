@@ -1,13 +1,18 @@
 import React from "react";
-import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import { useTheme } from "@react-navigation/native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 export const FloatingActionButton = () => {
+  const { colors } = useTheme();
   const handleAddPress = () => {
     alert("¡Botón flotante presionado!");
   };
 
   return (
-    <TouchableOpacity style={styles.floatingButton} onPress={handleAddPress}>
+    <TouchableOpacity
+      style={[styles.floatingButton, { backgroundColor: colors.primary }]}
+      onPress={handleAddPress}
+    >
       <Text style={styles.buttonText}>+</Text>
     </TouchableOpacity>
   );
@@ -26,7 +31,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 40,
     right: 30,
-    backgroundColor: "#6200ee",
     width: 60,
     height: 60,
     borderRadius: 30,

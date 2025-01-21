@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "@react-navigation/native";
 
 // components
 import { View, Text, StyleSheet, ScrollView } from "react-native";
@@ -15,11 +16,14 @@ export const MovementList = ({
   movementsList: Movement[];
 }) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const { colors } = useTheme();
   return (
     <>
       <View style={styles.container}>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>Movement List</Text>
+          <Text style={[styles.title, { color: colors.primary }]}>
+            Movement List
+          </Text>
         </View>
         {movementsList.length === 0 ? (
           <View>
@@ -59,7 +63,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 23,
-    color: "#A791E8",
   },
   noMovementsMessage: {
     textAlign: "center",
