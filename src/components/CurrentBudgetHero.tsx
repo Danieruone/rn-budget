@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from "react-native";
 export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
   const { colors } = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.card }]}>
       <View style={styles.currencySymbolContainer}>
         <Text style={[styles.currencySymbol, { color: colors.primary }]}>
           $
