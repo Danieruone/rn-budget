@@ -7,5 +7,6 @@ export const LightTheme = {
     primary: "#AE9BE9",
     background: "#FFFFFF",
     card: "#FFFEFE",
+    text: "#000000",
   },
 };

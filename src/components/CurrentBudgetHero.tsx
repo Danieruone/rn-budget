@@ -12,7 +12,9 @@ export const CurrentBudgetHero = ({ totalAmount }: { totalAmount: number }) => {
         </Text>
       </View>
       <View>
-        <Text style={styles.title}>Total Balance</Text>
+        <Text style={[styles.title, { color: colors.text }]}>
+          Total Balance
+        </Text>
         <Text style={[styles.subTitle, { color: colors.primary }]}>
           ${totalAmount}
         </Text>
