@@ -2,8 +2,10 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Movement, movementType } from "../models/movement";
 import Icon from "react-native-vector-icons/AntDesign";
+import { useTheme } from "@react-navigation/native";
 
 export const MovementItem = ({ data }: { data: Movement }) => {
+  const { colors } = useTheme();
   return (
     <View style={styles.container}>
       <View style={styles.infoBlock}>
@@ -22,8 +24,10 @@ export const MovementItem = ({ data }: { data: Movement }) => {
           )}
         </View>
         <View>
-          <Text style={styles.titleName}>{data.name}</Text>
-          <Text>{data.category}</Text>
+          <Text style={[styles.titleName, { color: colors.text }]}>
+            {data.name}
+          </Text>
+          <Text style={{ color: colors.text }}>{data.category}</Text>
         </View>
       </View>
       <View>

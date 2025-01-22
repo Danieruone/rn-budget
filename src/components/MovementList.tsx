@@ -19,7 +19,7 @@ export const MovementList = ({
   const { colors } = useTheme();
   return (
     <>
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor: colors.card }]}>
         <View style={styles.titleContainer}>
           <Text style={[styles.title, { color: colors.primary }]}>
             Movement List
