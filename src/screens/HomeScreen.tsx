@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-
 import { View } from "react-native";
 
 // components
 import { CurrentBudgetHero } from "../components/CurrentBudgetHero";
 import { MovementList } from "../components/MovementList";
+import { TitleContainer } from "../components/TitleContainer";
+import { FloatingActionButton } from "../components/shared/FloatingActionButton";
 
 // models
 import { Movement, movementType } from "../models/movement";
-import { FloatingActionButton } from "../components/shared/FloatingActionButton";
 
 const movementsDummy: Movement[] = [
   {
@@ -34,6 +34,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{ flex: 1 }}>
+      <TitleContainer />
       <CurrentBudgetHero totalAmount={totalAmount} />
       <MovementList movementsList={movementsList} />
       <FloatingActionButton />
