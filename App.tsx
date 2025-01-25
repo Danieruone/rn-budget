@@ -1,20 +1,18 @@
-// navigation
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-
-// screen
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ThemeProvider, useTheme } from "./src/themes/context/ThemeContext";
 import HomeScreen from "./src/screens/HomeScreen";
-import { useColorScheme } from "react-native";
 import { CustomDarkTheme, LightTheme } from "./src/themes";
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
-  const scheme = useColorScheme();
+const AppNavigator = () => {
+  const { theme } = useTheme();
 
   return (
     <NavigationContainer
-      theme={scheme === "dark" ? CustomDarkTheme : LightTheme}
+      theme={theme === "dark" ? CustomDarkTheme : LightTheme}
     >
       <Stack.Navigator>
         <Stack.Screen
@@ -25,4 +23,14 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <AppNavigator />
+    </ThemeProvider>
+  );
+};
+
+export default App;

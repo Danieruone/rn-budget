@@ -1,8 +1,9 @@
 import React from "react";
 
 import { CustomButton } from "./CustomButton";
+import { useTheme } from "../../themes/context/ThemeContext";
 
 export const ThemeButton = () => {
-  // TODO: Implement the logic to change the theme
-  return <CustomButton title="Light" handlePress={() => {}} />;
+  const { toggleTheme, theme } = useTheme();
+  return <CustomButton title={theme} handlePress={toggleTheme} />;
 };
